@@ -26,7 +26,8 @@ jobs:
         pip install -r requirements.txt
     - name: docker_
       run: |
-        cd web-connect docker build -t web-connect 
+        cd web-connect 
+        docker build -t web-connect 
     - name: deploy_site
       run: |
         . docker run --rm --name web -p 8080:8080 web-connect
